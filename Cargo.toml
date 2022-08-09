@@ -1,0 +1,26 @@
+[package]
+name = "etheryal-auth-service"
+version = "0.1.0"
+edition = "2021"
+publish = false
+authors = ["Celeste Peláez <celeste@etheryal.net>"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+axum = "0.5.13"
+clap = { version = "3.2.16", features = ["derive"] }
+hyper = "0.14.20"
+serde = "1.0.142"
+serde_urlencoded = "0.7.1"
+thiserror = "1.0.32"
+tokio = { version = "1.20.1", features = ["full"] }
+tracing = "0.1.36"
+tracing-subscriber = { version = "0.3.15", features = ["env-filter"] }
+tower-http = { version = "0.3.4", features = ["trace", "compression-full", "sensitive-headers"] }
+
+[dependencies.oxide-auth-axum]
+git = "https://github.com/KernelFreeze/oxide-auth"
+
+[dependencies.oxide-auth]
+git = "https://github.com/KernelFreeze/oxide-auth"
